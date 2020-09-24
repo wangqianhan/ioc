@@ -1,0 +1,33 @@
+
+file "db/button_protected.db" {
+    { PV = "LA-BI:PRF0:MOTOR"}
+    { PV = "LA-BI:PRF1:MOTOR"}
+    { PV = "LA-BI:PRF2:MOTOR"}
+    { PV = "LA-BI:PRF3:MOTOR"}
+    { PV = "LA-BI:PRFB1:MOTOR"}
+    { PV = "LA-BI:PRFB2:MOTOR"}
+    { PV = "LA-BI:PRF4:MOTOR"}
+    { PV = "LA-BI:PRF5:MOTOR"}
+    { PV = "LA-BI:PRF6:MOTOR"}
+    { PV = "LA-BI:PRF7:MOTOR"}
+    { PV = "LA-BI:PRF8:MOTOR"}
+    { PV = "LA-BI:PRFB3:MOTOR"}
+    { PV = "UD-BI:PRF1:MOTOR"}
+    { PV = "UD-BI:PRF2:MOTOR"}
+    { PV = "UD-BI:PRF3:MOTOR"}
+    { PV = "UD-BI:PRF5:MOTOR"}
+    { PV = "UD-BI:PRF6:MOTOR"}
+    { PV = "UD-BI:PRF7:MOTOR"}
+    { PV = "UD-BI:PRF8:MOTOR"}
+    { PV = "UD-BI:PRF9:MOTOR"}
+    { PV = "UD-BI:PRF10:MOTOR"}
+    { PV = "UD-BI:PRF11:MOTOR"}
+    { PV = "UD-BI:PRF12:MOTOR"}
+    { PV = "UD-BI:PRF13:MOTOR"}
+    { PV = "UD-BI:PRFB1:MOTOR"}
+    { PV = "UD-SC:EMM1:MOTOR"}
+    { PV = "UD-SC:EMM2:MOTOR"}
+    { PV = "UD-SC:COM1:MOTOR"}
+}
+
+

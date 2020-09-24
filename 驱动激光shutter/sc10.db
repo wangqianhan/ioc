@@ -1,0 +1,60 @@
+########################################
+# command interface to device
+########################################
+record (stringout, "$(H):cmd")
+{
+	field (DTYP, "stream")
+	field (OUT,  "@$(P) cmd $(PORT)")
+}
+record (stringout, "$(H):request")
+{
+	field (DTYP, "stream")
+	field (OUT,  "@$(P) cmd_reply $(PORT)")
+}
+
+############################################
+record(fanout, "$(H):fanout")
+{
+#	field(SCAN, "1 second")
+	field(LNK1, "$(H):enabled")
+	field(LNK2, "$(H):interlock")
+	field(LNK3, "$(H):closed")
+}
+########################################
+## channel ab
+record (bo, "$(H):shutter_enable")
+{
+    field (DTYP, "stream")
+    field (OUT, "@$(P) shutter_enable $(PORT)")
+#    field (FLNK, "$(H):enabled")
+}
+record (bi, "$(H):enabled")
+{
+    field (ONAM, "Enabled")
+    field (ZNAM, "Disabled")
+}
+record (bi, "$(H):closed")
+{
+    field (ONAM, "Closed")
+    field (ZNAM, "Open")
+}
+record (bi, "$(H):interlock")
+{
+    field (ONAM, "Interlock")
+    field (ZNAM, "No Interlock")
+}
+record (bi, "$(H):status")
+{
+	field (SCAN, ".5 second")
+	field (DTYP, "stream")
+	field (INP, "@$(P) shutter_status($(H):interlock,$(H):enabled,$(H):closed) $(PORT)")
+}
+record (bi, "$(H):t1")
+{
+}
+record (bi, "$(H):t2")
+{
+}
+record (bi, "$(H):t3")
+{
+}

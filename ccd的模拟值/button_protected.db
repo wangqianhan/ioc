@@ -1,0 +1,23 @@
+record (ao,"P:$(PV)")
+{
+    #field(ZRST,"unpushed")
+    #field(ZRVL,"0")
+    #field(ONST,"pushed")
+    #field(ONVL,"1")
+    field(DTYP,"Soft Channel")
+    field(SCAN,"Passive")
+}
+#record(ao,"P:BL:BS0:Open")                                          
+#{                                           
+##       field(SCAN,"1 second")                                    
+#       field(DTYP,"Soft Channel")                                      
+#       field(ZNAM,"OFF")                                          
+#       field(ONAM,"ON")                                           
+#}
+#record(ao,"P:BL:BS0:Close")                                         
+#{                                            
+##       field(SCAN,"1 second")                                    
+#       field(DTYP,"Soft Channel")                                      
+#       field(ZNAM,"OFF")                                          
+#       field(ONAM,"ON")                                           
+#}                               

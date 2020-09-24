@@ -1,0 +1,127 @@
+#Terminator = "\x0d";
+#ReadTimeout = 200
+#ReplyTimeout = 200
+#PollPeriod= 200
+#MaxInput = 0
+##Angilent离子泵的Agilent 4UHV Ion Pump Controller中Instruction Manual文档里面##76-78页中的cammand，#其中命令601(在80页)在cammand中没有，只有在例子中有描    ##述，他是自动启停功能
+##------------------------------------------------
+#-------------------------------------------High voltage--------------------------------------
+
+
+#命令是810
+voltage_v1{
+		out "\x02\x81\x38\x31\x30\x30\x03%01.0<xor>";
+		in  "\x02\x81\x38\x31\x30\x30%06d\x03%01.0<xor>";
+		}
+#命令是811
+current_A1{
+		out "\x02\x81\x38\x31\x31\x30\x03%01.0<xor>";
+		in  "\x02\x81\x38\x31\x31\x30%E\x03%01.0<xor>";
+		}
+voltage_v5{
+		out "\x02\x80\x38\x31\x30\x30\x03%01.0<xor>";
+		in  "\x02\x80\x38\x31\x30\x30%06d\x03%01.0<xor>";
+		}
+#命令是811
+current_A5{
+		out "\x02\x80\x38\x31\x31\x30\x03%01.0<xor>";
+		in  "\x02\x80\x38\x31\x31\x30%E\x03%01.0<xor>";
+		}
+voltage_v2{
+		out "\x02\x81\x38\x32\x30\x30\x03%01.0<xor>";
+		in  "\x02\x81\x38\x32\x30\x30%06d\x03%01.0<xor>";
+		}
+current_A2{
+		out "\x02\x81\x38\x32\x31\x30\x03%01.0<xor>";
+		in  "\x02\x81\x38\x32\x31\x30%E\x03%01.0<xor>";
+		}
+voltage_v6{
+		out "\x02\x80\x38\x32\x30\x30\x03%01.0<xor>";
+		in  "\x02\x80\x38\x32\x30\x30%06d\x03%01.0<xor>";
+		}
+current_A6{
+		out "\x02\x80\x38\x32\x31\x30\x03%01.0<xor>";
+		in  "\x02\x80\x38\x32\x31\x30%E\x03%01.0<xor>";
+		}
+voltage_v3{
+		out "\x02\x81\x38\x33\x30\x30\x03%01.0<xor>";
+		in  "\x02\x81\x38\x33\x30\x30%06d\x03%01.0<xor>";
+		}
+current_A3{
+		out "\x02\x81\x38\x33\x31\x30\x03%01.0<xor>";
+		in  "\x02\x81\x38\x33\x31\x30%E\x03%01.0<xor>";
+		}
+voltage_v7{
+		out "\x02\x80\x38\x33\x30\x30\x03%01.0<xor>";
+		in  "\x02\x80\x38\x33\x30\x30%06d\x03%01.0<xor>";
+		}
+current_A7{
+		out "\x02\x80\x38\x33\x31\x30\x03%01.0<xor>";
+		in  "\x02\x80\x38\x33\x31\x30%E\x03%01.0<xor>";
+		}
+voltage_v4{
+		out "\x02\x81\x38\x34\x30\x30\x03%01.0<xor>";
+		in  "\x02\x81\x38\x34\x30\x30%06d\x03%01.0<xor>";
+		}
+current_A4{
+		out "\x02\x81\x38\x34\x31\x30\x03%01.0<xor>";
+		in  "\x02\x81\x38\x34\x31\x30%E\x03%01.0<xor>";
+		}
+voltage_v8{
+		out "\x02\x80\x38\x34\x30\x30\x03%01.0<xor>";
+		in  "\x02\x80\x38\x34\x30\x30%06d\x03%01.0<xor>";
+		}
+current_A8{
+		out "\x02\x80\x38\x34\x31\x30\x03%01.0<xor>";
+		in  "\x02\x80\x38\x34\x31\x30%E\x03%01.0<xor>";
+		}
+#命令是804		
+status{
+		out "\x02\x81\x38\x30\x34\x30\x03%01.0<xor>";
+		in  "\x02\x81\x38\x30\x34\x30%*6d%(BL:STATUS8)1d%(BL:STATUS7)1d%(BL:STATUS6)1d%(BL:STATUS5)1d\x03%01.0<xor>";
+                }
+status1{
+		out "\x02\x80\x38\x30\x34\x30\x03%01.0<xor>";
+		in  "\x02\x80\x38\x30\x34\x30%*6d%(BL:STATUS4)1d%(BL:STATUS3)1d%(BL:STATUS2)1d%(BL:STATUS1)1d\x03%01.0<xor>";
+		}	
+#命令是11的开
+switch_hv1{
+		out "\x02\x81\x30\x31\x31\x31%1d\x03%01.0<xor>";
+                in  "\x02\x81\x06\x03%01.0<xor>";
+		}
+#命令是12的开
+switch_hv2{
+		out "\x02\x81\x30\x31\x32\x31%1d\x03%01.0<xor>";
+                in  "\x02\x81\x06\x03%01.0<xor>";
+		}
+#命令是13的开
+switch_hv3{
+		out "\x02\x81\x30\x31\x33\x31%1d\x03%01.0<xor>";
+                in  "\x02\x81\x06\x03%01.0<xor>";
+		}
+#命令是14的开
+switch_hv4{
+		out "\x02\x81\x30\x31\x34\x31%1d\x03%01.0<xor>";
+                in  "\x02\x81\x06\x03%01.0<xor>";
+		}
+switch_hv5{
+		out "\x02\x80\x30\x31\x31\x31%1d\x03%01.0<xor>";
+                in  "\x02\x80\x06\x03%01.0<xor>";
+		}
+#命令是12的开
+switch_hv6{
+		out "\x02\x80\x30\x31\x32\x31%1d\x03%01.0<xor>";
+                in  "\x02\x80\x06\x03%01.0<xor>";
+		}
+#命令是13的开
+switch_hv7{
+		out "\x02\x80\x30\x31\x33\x31%1d\x03%01.0<xor>";
+                in  "\x02\x80\x06\x03%01.0<xor>";
+		}
+#命令是14的开
+switch_hv8{
+		out "\x02\x80\x30\x31\x34\x31%1d\x03%01.0<xor>";
+                in  "\x02\x80\x06\x03%01.0<xor>";
+		}
+
+

@@ -1,0 +1,180 @@
+########################################
+# command interface to device
+########################################
+record (stringout, "$(H):cmd")
+{
+	field (DTYP, "stream")
+	field (OUT,  "@$(P) cmd $(PORT)")
+}
+record (stringout, "$(H):request")
+{
+	field (DTYP, "stream")
+	field (OUT,  "@$(P) cmd_reply $(PORT)")
+}
+###########################################################
+record (fanout, "$(H):fanout_status")
+{
+#	field (SCAN, "1 second")
+	field (SELM, "Mask")
+	field (SELL, "7")
+	field (LNK1, "$(H):status_a1")
+	field (LNK2, "$(H):status_a2")
+	field (LNK3, "$(H):status_a3")
+	field (FLNK, "$(H):fanout_position")
+}
+record (fanout, "$(H):fanout_position")
+{
+	field (SCAN, "1 second")
+	field (SELM, "Mask")
+	field (SELL, "7")
+	field (LNK1, "$(H):position_a1")
+	field (LNK2, "$(H):position_a2")
+	field (LNK3, "$(H):position_a3")
+}
+###########################################################
+record(mbbi, "$(H):status_a1")
+{
+	field(DTYP, "stream")
+	field(INP, "@$(P) query_status(1)  $(PORT)")
+}
+record(mbbi, "$(H):status_a2")
+{
+	field(DTYP, "stream")
+	field(INP, "@$(P) query_status(2)  $(PORT)")
+}
+record(mbbi, "$(H):status_a3")
+{
+	field(DTYP, "stream")
+	field(INP, "@$(P) query_status(3)  $(PORT)")
+}
+record(ai, "$(H):position_a1")
+{
+	field(DTYP, "stream")
+	field(INP, "@$(P) query_position(1)  $(PORT)")
+}
+record(ai, "$(H):position_a2")
+{
+	field(DTYP, "stream")
+	field(INP, "@$(P) query_position(2)  $(PORT)")
+}
+record(ai, "$(H):position_a3")
+{
+	field(DTYP, "stream")
+	field(INP, "@$(P) query_position(3)  $(PORT)")
+}
+###########################################################
+record(ai, "$(H):speed_a1")
+{
+	field(DTYP, "stream")
+	field(INP, "@$(P) query_speed(1)  $(PORT)")
+}
+record(ao, "$(H):set_speed_a1")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) set_speed(1)  $(PORT)")
+        field(FLNK, "$(H):speed_a1")
+}
+record(ai, "$(H):acc_a1")
+{
+	field(DTYP, "stream")
+	field(INP, "@$(P) query_acc(1)  $(PORT)")
+}
+record(ao, "$(H):set_acc_a1")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) set_acc(1)  $(PORT)")
+        field(FLNK, "$(H):acc_a1")
+}
+record(ao, "$(H):pr_a1")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) pr_axis(1)  $(PORT)")
+}
+record(ao, "$(H):pa_a1")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) pa_axis(1)  $(PORT)")
+}
+record(bo, "$(H):stop_axis_a1")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) stop_axis(1) $(PORT)")
+}
+###########################################################
+record(ai, "$(H):speed_a2")
+{
+	field(DTYP, "stream")
+	field(INP, "@$(P) query_speed(2)  $(PORT)")
+}
+record(ao, "$(H):set_speed_a2")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) set_speed(2)  $(PORT)")
+        field(FLNK, "$(H):speed_a2")
+}
+record(ai, "$(H):acc_a2")
+{
+	field(DTYP, "stream")
+	field(INP, "@$(P) query_acc(2)  $(PORT)")
+}
+record(ao, "$(H):set_acc_a2")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) set_acc(2)  $(PORT)")
+        field(FLNK, "$(H):acc_a2")
+}
+record(ao, "$(H):pr_a2")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) pr_axis(2)  $(PORT)")
+}
+record(ao, "$(H):pa_a2")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) pa_axis(2)  $(PORT)")
+}
+record(bo, "$(H):stop_axis_a2")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) stop_axis(2) $(PORT)")
+}
+###########################################################
+record(ai, "$(H):speed_a3")
+{
+	field(DTYP, "stream")
+	field(INP, "@$(P) query_speed(3)  $(PORT)")
+}
+record(ao, "$(H):set_speed_a3")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) set_speed(3)  $(PORT)")
+        field(FLNK, "$(H):speed_a3")
+}
+record(ai, "$(H):acc_a3")
+{
+	field(DTYP, "stream")
+	field(INP, "@$(P) query_acc(3)  $(PORT)")
+}
+record(ao, "$(H):set_acc_a3")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) set_acc(3)  $(PORT)")
+        field(FLNK, "$(H):acc_a3")
+}
+record(ao, "$(H):pr_a3")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) pr_axis(3)  $(PORT)")
+}
+record(ao, "$(H):pa_a3")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) pa_axis(3)  $(PORT)")
+}
+record(bo, "$(H):stop_axis_a3")
+{
+	field(DTYP, "stream")
+	field(OUT, "@$(P) stop_axis(3) $(PORT)")
+}
+###########################################################
+

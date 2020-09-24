@@ -1,0 +1,103 @@
+#Angilent离子泵的Agilent 4UHV Ion Pump Controller中Instruction Manual文档里面76-78页中的#cammand，#其中命令601(在80页)在cammand中没有，只有在例子中有描述，他是自动启停功能
+
+#-----------------------------------
+record(stringout,"IP1")
+{
+       field (DTYP, "stream")
+       field (OUT, "@accdaoru1.proto ip1 PS1")        
+                                                                         
+}
+record(stringin,"$(dev):STATUS")
+{
+       field (DTYP, "stream")
+       field (INP, "@accdaoru1.proto status$(proto) $(port)")        
+       field (SCAN, "1 second")                                                                 
+}
+
+record(ao,"$(dev):INIT")
+{
+       field (DTYP, "stream")
+       field (OUT, "@accdaoru1.proto init$(proto) $(port)")        
+                                                                         
+}
+record(ao,"$(dev):P")
+{
+       field (DTYP, "stream")
+       field (OUT, "@accdaoru1.proto p$(proto) $(port)")        
+                                                                         
+}
+record(ao,"$(dev):N")
+{
+       field (DTYP, "stream")
+       field (OUT, "@accdaoru1.proto n$(proto) $(port)")        
+                                                                         
+}
+record(ao,"$(dev):V")
+{
+field(DTYP,"stream")
+field(OUT, "@accdaoru1.proto v$(proto) $(port)")
+}
+record(bo,"$(dev):ZERO")
+{
+       field (DTYP, "stream")
+       field (OUT, "@accdaoru1.proto zero$(proto) $(port)")       
+                                                                         
+}
+record(bo,"$(dev):STOP")
+{
+       field (DTYP, "stream")
+       field (OUT, "@accdaoru1.proto stop$(proto) $(port)")       
+                                                                         
+}
+record(ai,"$(dev):POS")
+{
+       field (DTYP, "stream")
+       field (INP, "@accdaoru1.proto pos$(proto) $(port)")       
+       field (SCAN, "1 second")
+	   field (PREC,"3")                                                                        
+}
+record(ao,"$(dev):SET1")
+{
+       field (DTYP, "stream")
+       field (OUT, "@accdaoru1.proto p$(proto) $(port)")        
+                       info(autosaveFields, "VAL")                                                             
+}
+record(ao,"$(dev):SET2")
+{
+       field (DTYP, "stream")
+       field (OUT, "@accdaoru1.proto p$(proto) $(port)")        
+   	           info(autosaveFields, "VAL")                                                                      
+}
+record(bo,"$(dev):FLAG1")
+{
+  field(DTYP,"Soft Channel")
+  field(VAL, "0")
+  field(ZNAM,"OFF")
+  field(ONAM,"ON")
+}
+record(bo,"$(dev):FLAG2")
+{
+  field(DTYP,"Soft Channel")
+  field(VAL, "0")
+  field(ZNAM,"OFF")
+  field(ONAM,"ON")
+
+}
+record(bo,"$(dev):FLAG3")
+{
+  field(DTYP,"Soft Channel")
+  field(VAL, "0")
+  field(ZNAM,"OFF")
+  field(ONAM,"ON")
+}
+record(ao,"$(dev):CAM")
+{
+  field(DTYP,"Soft Channel")
+  field(VAL, "$(num)")
+}
+record(ao,"CAM")
+{
+  field(DTYP,"Soft Channel")
+  field(VAL, "0")
+}
+ 

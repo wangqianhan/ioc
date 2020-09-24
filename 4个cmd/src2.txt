@@ -1,0 +1,18 @@
+epicsEnvSet ("STREAM_PROTOCOL_PATH", "C:\Users\51179\Desktop\HP\hwslearn\work\ioc\db")
+#epicsEnvSet ("CA_ADDR_LIST", "192.168.2.220")
+dbLoadDatabase "C:\Users\51179\Desktop\HP\hwslearn\work\ioc\dbd\smmsIoc.dbd"
+smmsIoc_registerRecordDeviceDriver pdbbase
+
+#drvAsynIPPortConfigure ("PS1", "192.168.1.127:8000")
+drvAsynSerialPortConfigure "SF","COM7"
+
+asynSetOption ("SF",0,"baud","9600")
+asynSetOption ("SF",0,"bits","8")
+asynSetOption ("SF",0,"parity","none")
+asynSetOption ("SF",0,"stop","1")
+#device1.
+dbLoadRecords "C:\Users\51179\Desktop\HP\hwslearn\work\ioc\db\sf.db"
+
+iocInit
+
+

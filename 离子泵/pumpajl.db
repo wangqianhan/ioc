@@ -1,0 +1,229 @@
+#Angilent离子泵的Agilent 4UHV Ion Pump Controller中Instruction Manual文档里面76-78页中的#cammand，#其中命令601(在80页)在cammand中没有，只有在例子中有描述，他是自动启停功能
+
+#-----------------------------------
+#Angilent离子泵的Agilent 4UHV Ion Pump Controller中Instruction Manual文档里面76-78页中的#cammand，#其中命令601(在80页)在cammand中没有，只有在例子中有描述，他是自动启停功能
+
+#-----------------------------------
+record(ai,"BL:IP:V5")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto voltage_v1 PUMPAJL")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:I5")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto current_A1 PUMPAJL")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:V1")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto voltage_v5 PUMPAJL1")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:I1")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto current_A5 PUMPAJL1")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:V6")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto voltage_v2 PUMPAJL")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:I6")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto current_A2 PUMPAJL")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:V2")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto voltage_v6 PUMPAJL1")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:I2")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto current_A6 PUMPAJL1")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:V7")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto voltage_v3 PUMPAJL")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:I7")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto current_A3 PUMPAJL")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:V3")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto voltage_v7 PUMPAJL1")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:I3")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto current_A7 PUMPAJL1")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:V8")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto voltage_v4 PUMPAJL")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:I8")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto current_A4 PUMPAJL")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:V4")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto voltage_v8 PUMPAJL1")       
+       field (SCAN, "1 second")  
+}
+record(ai,"BL:IP:I4")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto current_A8 PUMPAJL1")       
+       field (SCAN, "1 second")  
+}
+record(ai,"STATUS")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto status PUMPAJL")       
+       field (SCAN, "1 second")  
+}
+record(bi,"BL:STATUS5")
+{          
+           field (DTYP,"Soft Channel")
+	   field (ZNAM,"OFF")
+	   field (ONAM,"ON")
+} 
+record(bi,"BL:STATUS6")
+{          
+           field (DTYP,"Soft Channel")  
+           field (ZNAM,"OFF")
+	   field (ONAM,"ON")	   
+} 
+record(bi,"BL:STATUS7")
+{          
+       field (DTYP,"Soft Channel") 
+       field (ZNAM,"OFF")
+       field (ONAM,"ON")	   
+} 
+record(bi,"BL:STATUS8")
+{          
+       field (DTYP,"Soft Channel")
+       field (ZNAM,"OFF")
+       field (ONAM,"ON")	   
+} 
+record(ai,"STATUS1")
+{
+       field (DTYP, "stream")
+       field (INP, "@pumpajl.proto status1 PUMPAJL1")       
+       field (SCAN, "1 second")  
+}
+record(bi,"BL:STATUS1")
+{          
+           field (DTYP,"Soft Channel")
+	   field (ZNAM,"OFF")
+	   field (ONAM,"ON")
+} 
+record(bi,"BL:STATUS2")
+{          
+           field (DTYP,"Soft Channel")  
+           field (ZNAM,"OFF")
+	   field (ONAM,"ON")	   
+} 
+record(bi,"BL:STATUS3")
+{          
+       field (DTYP,"Soft Channel") 
+       field (ZNAM,"OFF")
+       field (ONAM,"ON")	   
+} 
+record(bi,"BL:STATUS4")
+{          
+       field (DTYP,"Soft Channel")
+       field (ZNAM,"OFF")
+       field (ONAM,"ON")	   
+} 
+#命令是11的开
+record(bo,"BL:SWITCH:FIVE")
+{
+       field (DTYP, "stream")
+       field (OUT, "@pumpajl.proto switch_hv1 PUMPAJL")       
+       field (ZNAM,"OFF")
+	   field (ONAM,"ON")                                                                 
+}
+#命令是12的开
+record(bo,"BL:SWITCH:SIX")
+{
+       field (DTYP, "stream")
+       field (OUT, "@pumpajl.proto switch_hv2 PUMPAJL")       
+       field (ZNAM,"OFF")
+	   field (ONAM,"ON")                                                                  
+}
+
+#命令是13的开
+record(bo,"BL:SWITCH:SEVEN")
+{
+       field (DTYP, "stream")
+       field (OUT, "@pumpajl.proto switch_hv3 PUMPAJL")       
+       field (ZNAM,"OFF")
+	   field (ONAM,"ON")	                                                                  
+}
+#命令是14的开
+record(bo,"BL:SWITCH:EIGHT")
+{
+       field (DTYP, "stream")
+       field (OUT, "@pumpajl.proto switch_hv4 PUMPAJL")       
+       field (ZNAM,"OFF")
+	   field (ONAM,"ON")	                                                                  
+}
+record(bo,"BL:SWITCH:ONE")
+{
+       field (DTYP, "stream")
+       field (OUT, "@pumpajl.proto switch_hv5 PUMPAJL1")       
+       field (ZNAM,"OFF")
+	   field (ONAM,"ON")	                                                                  
+}
+record(bo,"BL:SWITCH:TWO")
+{
+       field (DTYP, "stream")
+       field (OUT, "@pumpajl.proto switch_hv6 PUMPAJL1")       
+       field (ZNAM,"OFF")
+	   field (ONAM,"ON")	                                                                  
+}
+record(bo,"BL:SWITCH:THREE")
+{
+       field (DTYP, "stream")
+       field (OUT, "@pumpajl.proto switch_hv7 PUMPAJL1")       
+       field (ZNAM,"OFF")
+	   field (ONAM,"ON")	                                                                  
+}
+record(bo,"BL:SWITCH:FOUR")
+{
+       field (DTYP, "stream")
+       field (OUT, "@pumpajl.proto switch_hv8 PUMPAJL1")       
+       field (ZNAM,"OFF")
+	   field (ONAM,"ON")	                                                                  
+}
+ 
+
+
+
+
+ 

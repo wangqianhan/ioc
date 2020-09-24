@@ -1,0 +1,14 @@
+Read_Position{
+	out "A:\x0d\x0a";
+	in "A:%5d0";
+
+}
+Set_Position{
+	out "c:0100\x0d\x0a";
+	in "x:%*s\x0d\x0a";
+	out "R:%05d0\x0d\x0a";
+}
+Cmd{
+	out "%s";
+	in "%(LV:CMD:RBV)s";
+}

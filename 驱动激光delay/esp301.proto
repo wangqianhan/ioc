@@ -1,0 +1,44 @@
+Terminator = CR LF;
+readtimeout = 50;
+replytimeout = 500;
+LockTimeout = 1500;
+
+cmd {
+	out "%s";
+}
+cmd_reply {
+	out "%s";
+	in "%39c";
+}
+
+query_status {
+	out "\$1TS?";
+	in "%x";
+}
+query_position {
+	out "\$1TP?";
+	in "%g";
+}
+query_speed {
+	out "\$1VA?";
+	in "%g";
+}
+set_speed {
+	out "\$1VA%g";
+}
+query_acc {
+	out "\$1AC?";
+	in "%g";
+}
+set_acc {
+	out "\$1AC%g";
+}
+pr_axis {
+	out "\$1PR%+g";
+}
+pa_axis {
+	out "\$1PA%+g";
+}
+stop_axis {
+	out "\$1ST";
+}

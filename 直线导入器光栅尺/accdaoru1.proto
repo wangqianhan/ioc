@@ -1,0 +1,151 @@
+
+
+ip1{
+out "IP %s\r";
+in  "OK\r";
+}
+
+
+statusx{
+out "STATUS? X\r";
+in  "STATUS? %s\r";
+}
+statusy{
+out "STATUS? Y\r";
+in  "STATUS? %s\r";
+}
+statusz{
+out "STATUS? Z\r";
+in  "STATUS? %s\r";
+}
+statust{
+out "STATUS? T\r";
+in  "STATUS? %s\r";
+}
+		
+		
+initx{
+out "GO X,N\r";
+in  "READY\r";
+}
+inity{
+out "GO Y,N\r";
+in  "READY\r";
+}
+initz{
+out "GO Z,N\r";
+in  "READY\r";
+}
+initt{
+out "GO T,N\r";
+in  "READY\r";
+}
+		
+px{
+out "GOPOSITION X,P,%d";
+in  "READY\r";
+}
+py{
+out "GOPOSITION Y,P,%d";
+in  "READY\r";
+}
+pz{
+out "GOPOSITION Z,P,%d";
+in  "READY\r";
+}
+pt{
+out "GOPOSITION T,P,%d";
+in  "READY\r";
+}
+		
+		
+nx{
+out "GOPOSITION X,N,%d";
+in  "READY\r";
+}
+ny{
+out "GOPOSITION Y,N,%d";
+in  "READY\r";
+}
+nz{
+out "GOPOSITION Z,N,%d";
+in  "READY\r";
+}
+nt{
+out "GOPOSITION T,N,%d";
+in  "READY\r";
+}
+
+
+vx{
+out "SETSPEED X,%d\r";
+in  "SETSPEED X,OK\r";
+}
+vy{
+out "SETSPEED Y,%d\r";
+in  "SETSPEED Y,OK\r";
+}
+vz{
+out "SETSPEED Z,%d\r";
+in  "SETSPEED Z,OK\r";
+}
+vt{
+out "SETSPEED T,%d\r";
+in  "SETSPEED T,OK\r";
+}
+                		
+		
+zerox{
+out "GOHOME X\r";
+in  "READY\r";
+}
+zeroy{
+out "GOHOME Y\r";
+in  "READY\r";
+}
+zeroz{
+out "GOHOME Z\r";
+in  "READY\r";
+}
+zerot{
+out "GOHOME T\r";
+in  "READY\r";
+}
+		
+		
+stopx{
+out "STOP X\r";
+in  "%s\r";
+}
+stopy{
+out "STOP Y\r";
+in  "%s\r";
+}
+stopz{
+out "STOP Z\r";
+in  "%s\r";
+}
+stopt{
+out "STOP T\r";
+in  "%s\r";
+}
+		
+		
+posx{
+out "POSITION? X,M\r";
+in  "POSITION? X,%f,OK\r";
+}
+posy{
+out "POSITION? Y,M\r";
+in  "POSITION? Y,%f,OK\r";
+}
+posz{
+out "POSITION? Z,M\r";
+in  "POSITION? Z,%f,OK\r";
+}
+post{
+out "POSITION? T,M\r";
+in  "POSITION? T,%f,OK\r";
+}
+		
+		

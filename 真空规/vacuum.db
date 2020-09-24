@@ -1,0 +1,329 @@
+record(ai, "BL:G0")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(1) COM1")
+  field(SCAN,"1 second")
+  field(EGU, "mbar")
+  field(FLNK,"BL:G0:PA")
+}
+record(calc,"BL:G0:PA")
+{
+  field(INPA,"BL:G0")
+  field(CALC,"A*100")
+}
+record(bo,"BL:Gall1:ON")
+{
+  field(DTYP,"stream")
+  field(OUT,"@vacuum.proto getON COM1")
+}
+record(bo,"BL:456:ON")
+{
+  field(DTYP,"stream")
+  field(OUT,"@vacuum.proto get456ON COM2")
+}
+record(bo,"BL:456:OFF")
+{
+  field(DTYP,"stream")
+  field(OUT,"@vacuum.proto get456OFF COM2")
+}
+record(bo,"BL:789:ON")
+{
+  field(DTYP,"stream")
+  field(OUT,"@vacuum.proto get789ON COM3")
+}
+record(bo,"BL:789:OFF")
+{
+  field(DTYP,"stream")
+  field(OUT,"@vacuum.proto get789OFF COM3")
+}
+
+record(bo,"BL:Gall1:OFF")
+{
+  field(DTYP,"stream")
+  field(OUT,"@vacuum.proto getOFF COM1")
+}
+
+record(ai, "BL:G3")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(2) COM1")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G3:PA")
+ }
+record(calc,"BL:G3:PA")
+{
+  field(INPA,"BL:G3")
+  field(CALC,"A*100")
+} 
+record(ai, "BL:G12")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(3) COM1")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G12:PA")
+ }
+record(calc,"BL:G12:PA")
+{
+  field(INPA,"BL:G12")
+  field(CALC,"A*100")
+} 
+record(ai, "BL:G14")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(4) COM1")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G14:PA")
+ }
+record(calc,"BL:G14:PA")
+{
+  field(INPA,"BL:G14")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G1")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(5) COM1")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G1:PA")
+ }
+record(calc,"BL:G1:PA")
+{
+  field(INPA,"BL:G1")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G2")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(6) COM1")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G2:PA")
+ }
+record(calc,"BL:G2:PA")
+{
+  field(INPA,"BL:G2")
+  field(CALC,"A*100")
+} 
+record(ai, "BL:G15")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(1) COM2")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G15:PA")
+}
+record(calc,"BL:G15:PA")
+{
+  field(INPA,"BL:G15")
+  field(CALC,"A*100")
+}
+record(bo,"BL:Gall2:OFF")
+{
+  field(DTYP,"stream")
+  field(OUT,"@vacuum.proto getOFF COM2")
+}
+record(bo,"BL:Gall2:ON")
+{
+  field(DTYP,"stream")
+  field(OUT,"@vacuum.proto getON COM2")
+}
+record(ai, "BL:G16")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(2) COM2")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G16:PA")
+ }
+record(calc,"BL:G16:PA")
+{
+  field(INPA,"BL:G16")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G17")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(3) COM2")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G17:PA")
+ }
+record(calc,"BL:G17:PA")
+{
+  field(INPA,"BL:G17")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G4")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(4) COM2")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G4:PA")
+ }
+record(calc,"BL:G4:PA")
+{
+  field(INPA,"BL:G4")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G5")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(5) COM2")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G5:PA")
+ }
+record(calc,"BL:G5:PA")
+{
+  field(INPA,"BL:G5")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G6")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(6) COM2")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G6:PA")
+ }
+record(calc,"BL:G6:PA")
+{
+  field(INPA,"BL:G6")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G7")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(1) COM3")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G7:PA")
+ }
+record(calc,"BL:G7:PA")
+{
+  field(INPA,"BL:G7")
+  field(CALC,"A*100")
+}
+record(bo,"BL:Gall3:OFF")
+{
+  field(DTYP,"stream")
+  field(OUT,"@vacuum.proto getOFF COM3")
+}
+record(bo,"BL:Gall3:ON")
+{
+  field(DTYP,"stream")
+  field(OUT,"@vacuum.proto getON COM3")
+}
+record(ai, "BL:G8")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(2) COM3")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G8:PA")
+ }
+record(calc,"BL:G8:PA")
+{
+  field(INPA,"BL:G8")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G9")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(3) COM3")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G9:PA")
+ }
+record(calc,"BL:G9:PA")
+{
+  field(INPA,"BL:G9")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G10")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(4) COM3")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G10:PA")
+ }
+record(calc,"BL:G10:PA")
+{
+  field(INPA,"BL:G10")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G11")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(5) COM3")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G11:PA")
+ }
+record(calc,"BL:G11:PA")
+{
+  field(INPA,"BL:G11")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G13")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(6) COM3")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G13:PA")
+ }
+record(calc,"BL:G13:PA")
+{
+  field(INPA,"BL:G13")
+  field(CALC,"A*100")
+}
+
+record(ai, "BL:G18")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(1) COM4")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G18:PA")
+ }
+record(calc,"BL:G18:PA")
+{
+  field(INPA,"BL:G18")
+  field(CALC,"A*100")
+}
+record(bo,"BL:Gall4:OFF")
+{
+  field(DTYP,"stream")
+  field(OUT,"@vacuum.proto getOFF COM4")
+}
+record(bo,"BL:Gall4:ON")
+{
+  field(DTYP,"stream")
+  field(OUT,"@vacuum.proto getON COM4")
+}
+record(ai, "BL:G19")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(2) COM4")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G19:PA")
+ }
+record(calc,"BL:G19:PA")
+{
+  field(INPA,"BL:G19")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G20")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(3) COM4")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G20:PA")
+ }
+record(calc,"BL:G20:PA")
+{
+  field(INPA,"BL:G20")
+  field(CALC,"A*100")
+}
+record(ai, "BL:G21")
+{
+  field(DTYP,"stream")
+  field(INP,"@vacuum.proto get(4) COM4")
+  field(SCAN,"1 second")
+  field(FLNK,"BL:G21:PA")
+ }
+record(calc,"BL:G21:PA")
+{
+  field(INPA,"BL:G21")
+  field(CALC,"A*100")
+}
+                

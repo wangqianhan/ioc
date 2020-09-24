@@ -1,0 +1,32 @@
+########################################
+# command interface to device
+########################################
+record (stringout, "$(H):cmd")
+{
+	field (DTYP, "stream")
+	field (OUT,  "@$(P) cmd $(PORT)")
+}
+record (stringout, "$(H):request")
+{
+	field (DTYP, "stream")
+	field (OUT,  "@$(P) cmd_reply $(PORT)")
+}
+
+############################################
+record (ai, "$(H):power")
+{
+#    field (SCAN, "1 second")
+    field (DTYP, "stream")
+    field (INP, "@$(P) read_power $(PORT)")
+    field (EGU, "mW")
+    field (ASLO, "1.0e3")
+}
+record (ai, "$(H):energy")
+{
+    field (SCAN, ".1 second")
+    field (DTYP, "stream")
+    field (INP, "@$(P) read_energy $(PORT)")
+    field (EGU, "uJ")
+    field (ASLO, "1.0e6")
+    field (MDEL,"-1")
+}

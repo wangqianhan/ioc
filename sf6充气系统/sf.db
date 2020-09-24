@@ -1,0 +1,90 @@
+#Angilent离子泵的Agilent 4UHV Ion Pump Controller中Instruction Manual文档里面76-78页中的#cammand，#其中命令601(在80页)在cammand中没有，只有在例子中有描述，他是自动启停功能
+
+#-----------------------------------
+
+record(ai,"SF6:POT1")
+{
+       field (DTYP, "stream")
+       field (INP, "@sf.proto POT1 SF")       
+       field (SCAN, "1 second")   
+}
+record(ai,"SF6:POT2")
+{
+       field (DTYP, "stream")
+       field (INP, "@sf.proto POT2 SF")       
+       field (SCAN, "1 second")	   
+}
+record(ai,"SF6:POT3")
+{
+       field (DTYP, "stream")
+       field (INP, "@sf.proto POT3 SF")       
+       field (SCAN, "1 second")
+		   
+}
+record(ai,"SF6:ALM0")
+{
+       field (DTYP, "stream")
+       field (INP, "@sf.proto ALM0 SF")       
+       field (SCAN, "1 second")
+	   field(FLNK,"SF6:ARM0")
+}
+record(ai,"SF6:ALM1")
+{
+       field (DTYP, "stream")
+       field (INP, "@sf.proto ALM1 SF")       
+       field (SCAN, "1 second")
+	   field(FLNK,"SF6:ARM1")   
+}
+record(ai,"SF6:ALM2")
+{
+       field (DTYP, "stream")
+       field (INP, "@sf.proto ALM2 SF")       
+       field (SCAN, "1 second")
+	   field(FLNK,"SF6:ARM2")
+	  
+		   
+}
+record(calcout,"SF6:ARM0")
+{
+       field (INPA, "SF6:ALM0")       
+       field (CALC, "(A<100)?0:1")
+	   field(OUT,"SF6:BJ0")
+}
+record(calcout,"SF6:ARM1")
+{
+       field (INPA, "SF6:ALM1")       
+       field (CALC, "(A<100)?0:1")
+	   field(OUT,"SF6:BJ1")   
+}
+record(calcout,"SF6:ARM2")
+{
+       field (INPA, "SF6:ALM2")       
+       field (CALC, "(A<100)?0:1")
+	   field(OUT,"SF6:BJ2")   
+}
+record(bi,"SF6:BJ0")
+{
+		field(DTYP,"Soft Channel")
+		field(VAL, "0") 
+		field (SCAN, "1 second") 
+		field(ZNAM,"OFF")
+		field(ONAM,"ON")
+		
+}
+record(bi,"SF6:BJ1")
+{
+		field(DTYP,"Soft Channel")
+		field(VAL, "0")
+		field (SCAN, "1 second") 
+		field(ZNAM,"OFF")
+		field(ONAM,"ON")
+}
+record(bi,"SF6:BJ2")
+{
+		field(DTYP,"Soft Channel")
+		field(VAL, "0")
+		field (SCAN, "1 second") 
+		field(ZNAM,"OFF")
+		field(ONAM,"ON")
+}
+ 

@@ -1,0 +1,225 @@
+#InTerminator="";
+#OutTerminator="";
+ReplyTimeout = 100; 
+ReadTimeout = 100;   
+#MaxInput=6;
+ExtraInput=Ignore;
+
+get { 
+    out "\x50\x52\$1\x0d\x0a";  
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in  "0,%f";
+    @mismatch {in "2,%f";}
+#    @mismatch {in "5,%f";}    
+}
+get1 { 
+    out "\x50\x52\x31\x0d\x0a";  
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in  "0,%f";
+    @mismatch {in "2,%f";}
+#    @mismatch {in "5,%f";}    
+}
+get2 { 
+    out "\x50\x52\x32\x0d\x0a";  
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in  "0,%f";
+    @mismatch {in "2,%f";}
+#    @mismatch {in "5,%f";}    
+}
+get3 { 
+    out "\x50\x52\x33\x0d\x0a";  
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in  "0,%f";
+    @mismatch {in "2,%f";}
+#    @mismatch {in "5,%f";}    
+}
+get4 { 
+    out "\x50\x52\x34\x0d\x0a";  
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in  "0,%f";
+    @mismatch {in "2,%f";}
+#    @mismatch {in "5,%f";}    
+}
+get5 { 
+    out "\x50\x52\x35\x0d\x0a";  
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in  "0,%f";
+    @mismatch {in "2,%f";}
+#    @mismatch {in "5,%f";}    
+}
+get6 { 
+    out "\x50\x52\x36\x0d\x0a";  
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in  "0,%f";
+    @mismatch {in "2,%f";}
+#    @mismatch {in "5,%f";}    
+}
+getON{
+    out "SEN,2,2,2,2,2,2\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+getOFF{
+    out "SEN,1,1,1,1,1,1\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+get456ON{
+    out "SEN,0,0,0,2,2,2\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+get456OFF{
+    out "SEN,0,0,0,1,1,1\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+get789ON{
+    out "SEN,2,2,2,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+get789OFF{
+    out "SEN,1,1,1,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+1ON{
+    out "SEN,2,0,0,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+2ON{
+    out "SEN,0,2,0,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+3ON{
+    out "SEN,0,0,2,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+4ON{
+    out "SEN,0,0,0,2,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+5ON{
+    out "SEN,0,0,0,0,2,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+6ON{
+    out "SEN,0,0,0,0,0,2\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+1OFF{
+    out "SEN,1,0,0,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+2OFF{
+    out "SEN,0,1,0,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+3OFF{
+    out "SEN,0,0,1,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+4OFF{
+    out "SEN,0,0,0,1,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+5OFF{
+    out "SEN,0,0,0,0,1,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+6OFF{
+    out "SEN,0,0,0,0,0,1\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%d,%d,%d,%d,%d,%d";
+    @mismatch {in "2,%f";}
+}
+getstatus4{
+    out "SEN,0,0,0,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%*d,%*d,%*d,%1d,%*d,%*d";
+}
+getstatus5{
+    out "SEN,0,0,0,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%*d,%*d,%*d,%*d,%1d,%*d";
+}
+getstatus6{
+    out "SEN,0,0,0,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%*d,%*d,%*d,%*d,%*d,%1d";
+}
+getstatus1{
+    out "SEN,0,0,0,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%1d,%*d,%*d,%*d,%*d,%*d";
+}
+getstatus2{
+    out "SEN,0,0,0,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%*d,%1d,%*d,%*d,%*d,%*d";
+}
+getstatus3{
+    out "SEN,0,0,0,0,0,0\x0d\x0a";
+    in "\x06";
+    out "\x05\x0d\x0a";
+    in "%*d,%*d,%1d,%*d,%*d,%*d";
+}

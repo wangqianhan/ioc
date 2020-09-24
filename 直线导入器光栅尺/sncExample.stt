@@ -1,0 +1,160 @@
+program sncExample 
+
+option +r;
+
+float x_pos1;
+assign x_pos1 to "{unit1}:POS";
+monitor x_pos1;
+
+float x_p1;
+assign x_p1 to "{unit1}:P";
+
+float x_n1;
+assign x_n1 to "{unit1}:N";
+
+int x_zero1;
+assign x_zero1 to "{unit1}:ZERO";
+
+int x_stop1;
+assign x_stop1 to "{unit1}:STOP";
+
+float x_set1;
+assign x_set1 to "{unit1}:SET1";
+monitor x_set1;
+
+float x_set2;
+assign x_set2 to "{unit1}:SET2";
+monitor x_set2;
+
+int x_flag1;
+assign x_flag1 to "{unit1}:FLAG1";
+monitor x_flag1;
+
+int x_flag2;
+assign x_flag2 to "{unit1}:FLAG2";
+monitor x_flag2;
+
+int x_flag3;
+assign x_flag3 to "{unit1}:FLAG3";
+monitor x_flag3;
+
+int x_cam1;
+assign x_cam1 to "{unit1}:CAM";
+monitor x_cam1;
+
+int x_init1;
+assign x_init1 to "{unit1}:INIT";
+monitor x_init1;
+
+int cam;
+assign cam to "CAM";
+monitor cam;
+
+ss all_state {
+  state neg {   
+    when () {
+      x_init1 = 1;
+	  cam=0;
+      pvPut(x_init1);
+      printf("neg success\n");
+    }state ter
+ } 
+
+  state ter {   
+    when (delay(10)) {
+	printf("ter success\n");	
+    }state zero
+ } 
+
+
+  state zero {   
+    when () {
+      x_zero1 = 1;
+      pvPut(x_zero1);
+	printf("init success\n");
+    }state move
+ }
+
+state negx1 {   
+    when () {
+      x_init1 = 1;
+      pvPut(x_init1);
+      printf("neg success\n");
+    }state terx1
+ } 
+state terx1 {   
+    when (delay(10)) {
+	printf("ter success\n");	
+    }state zerox1
+ } 
+  state zerox1 {   
+    when () {
+      x_zero1 = 1;
+      pvPut(x_zero1);
+	printf("init success\n");
+    }state move
+ }
+
+ 
+
+   state move {   
+    when (x_flag2==1) {
+	printf("move1 success\n");
+    }state posx1
+    when (x_flag3==1) {
+	printf("move1 success\n");
+    }state posx2
+ } 
+
+
+  state posx1 {
+    when (x_pos1<60) {
+	x_zero1 = 0;
+      pvPut(x_zero1);
+	x_stop1=0;
+	pvPut(x_stop1);
+      pvPut(x_set1);
+	cam=x_cam1;
+	pvPut(cam);
+	printf("pos1 success\n");
+	printf( " %f\n", x_set1 );
+     } state mid1
+  }
+
+  state posx2 {
+    when (x_pos1<60) {
+	x_zero1 = 0;
+      pvPut(x_zero1);
+	x_stop1=0;
+	pvPut(x_stop1);
+      pvPut(x_set2);
+	cam=x_cam1;
+	pvPut(cam);
+	printf("pos2 success\n");
+	printf( " %f\n", x_set2 );
+     } state mid1
+  }
+	
+
+ state mid1 {
+    when (delay(5)) {
+	printf( " %d\n", x_zero1 );
+	printf("mid1 success\n");
+	printf( " %f\n", x_pos1 );
+     } state protect1
+  }
+
+
+ state protect1 {
+    when (x_pos1>60) {
+      x_stop1=1;
+	pvPut(x_stop1);
+	printf("pro1 success\n");   
+       } state negx1
+    when (x_flag1 == 1){
+	x_stop1=1;
+	pvPut(x_stop1);
+	printf("pro2 success\n"); 	
+       }state negx1
+  }
+}

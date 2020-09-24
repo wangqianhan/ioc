@@ -1,0 +1,22 @@
+record(ai,"LV:POS:RBV")
+{
+	field(DTYP,"stream")
+	field(INP,"@leakvalve.proto Read_Position $(PORT)")
+	field(SCAN,".5 second")
+}
+record(ao,"LV:POS:SET")
+{
+	field(DTYP,"stream")
+	field(OUT,"@leakvalve.proto Set_Position $(PORT)")
+	field(DRVL,"0")
+	field(DRVH,"7500")
+}
+record(stringout,"LV:CMD")
+{
+	field(DTYP,"stream")
+	field(out,"@leakvalve.proto Cmd $(PORT)")
+}
+record(stringin,"LV:CMD:RBV")
+{
+	field(DTYP,"Soft Channel"）
+}

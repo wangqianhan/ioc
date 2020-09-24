@@ -1,0 +1,35 @@
+OutTerminator = CR;
+readtimeout = 500;
+replytimeout = 2000;
+LockTimeout = 2500;
+
+## common command interface
+cmd {
+    out "%s";
+}
+cmd_reply {
+    out "%s";
+    in "%39c";
+}
+
+#################################
+shutter_enable {
+    out "ens";
+    in "ens",CR,"> ";
+}
+shutter_enabled {
+    out "ens?";
+    in "ens?",CR,"%b",CR,"> ";
+}
+shutter_interlock {
+    out "interlock?";
+    in "interlock?",CR,"%b",CR,"> ";
+}
+shutter_closed {
+    out "closed?";
+    in "closed?",CR,"%b",CR,"> ";
+}
+shutter_status {
+    out "interlock?",CR,"ens?",CR,"closed?";
+    in "interlock?",CR,"%(\$1)b",CR,"> ","ens?",CR,"%(\$2)b",CR,"> ","closed?",CR,"%(\$3)b",CR,"> ","%*s";
+}

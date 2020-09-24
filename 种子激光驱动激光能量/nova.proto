@@ -1,0 +1,23 @@
+Terminator = CR LF;
+readtimeout = 500;
+replytimeout = 2000;
+LockTimeout = 2500;
+
+## common command interface
+cmd {
+    out "%s";
+}
+cmd_reply {
+    out "%s";
+    in "%39c";
+}
+
+#################################
+read_power {
+    out "$SP";
+    in '*',"%E";
+}
+read_energy {
+    out "$SE";
+    in '*',"%E";
+}

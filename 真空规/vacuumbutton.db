@@ -1,0 +1,24 @@
+record(bo,"BL:$(NUM):ON")
+{
+    field(DTYP,"stream")
+    field(OUT,"@vacuum.proto $(CH)ON $(PORT)")
+}
+record(bo,"BL:$(NUM):OFF")
+{
+    field(DTYP,"stream")
+    field(OUT,"@vacuum.proto $(CH)OFF $(PORT)")
+}
+record(ai,"BL:$(NUM):STATUS")
+{
+    field(DTYP,"stream")
+    field(INP,"@vacuum.proto getstatus$(CH) $(PORT)")
+    field(SCAN,"1 second")
+    field(ROFF,"-1")
+    field(FLNK,"BL:$(NUM):STATUS:PS")
+}
+record(bi,"BL:$(NUM):STATUS:PS")
+{
+    field(INP,"BL:$(NUM):STATUS")
+    field(ZNAM,"OFF")
+    field(ONAM,"ON")
+}
