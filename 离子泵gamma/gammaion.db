@@ -1,0 +1,256 @@
+record(bo,"R1")
+{
+       field (DTYP, "stream")
+       field (OUT, "@ionpumpgamma.proto r1 PS")            
+                                                                         
+}
+record(ai,"V1")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto v1 PS") 
+       field (SCAN, "1 second")  
+       field (VAL,"100")
+	   field (PREC,"3")  
+}
+record(ai,"V2")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto v2 PS") 
+       field (SCAN, "1 second")  
+       field (VAL,"100")
+	   field (PREC,"3")  
+}
+record(ai,"V3")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto v3 PS") 
+       field (SCAN, "1 second")  
+       field (VAL,"100")
+	   field (PREC,"3")  
+}
+record(ai,"V4")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto v4 PS") 
+       field (SCAN, "1 second")  
+       field (VAL,"100")
+	   field (PREC,"3")  
+}
+record(ai,"I1")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto i1 PS")       
+       field (SCAN, "1 second")  
+       field (PREC,"3")                                                                   
+} 
+
+record(ai,"I2")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto i2 PS")       
+       field (SCAN, "1 second")  
+       field (PREC,"3")                                                                   
+} 
+
+record(ai,"I3")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto i3 PS")       
+       field (SCAN, "1 second")  
+       field (PREC,"3")                                                                   
+} 
+
+record(ai,"I4")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto i4 PS")       
+       field (SCAN, "1 second")  
+       field (PREC,"3")                                                                   
+}
+record(ai,"P1")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto p1 PS")       
+       field (SCAN, "1 second")  
+       field (PREC,"3")                                                                   
+} 
+
+record(ai,"P2")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto p2 PS")       
+       field (SCAN, "1 second")  
+       field (PREC,"3")                                                                   
+} 
+
+record(ai,"P3")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto p3 PS")       
+       field (SCAN, "1 second")  
+       field (PREC,"3")                                                                   
+} 
+
+record(ai,"P4")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto p4 PS")       
+       field (SCAN, "1 second")  
+       field (PREC,"3")                                                                   
+}
+record(ai,"S1")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto s1 PS")         
+       field (SCAN, "1 second")  
+       field(FLNK,"S1:cal")                                                                  
+}
+record(ai,"S2")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto s1 PS")         
+       field (SCAN, "1 second")  
+       field(FLNK,"S2:cal")                                                                  
+}
+record(ai,"S3")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto s1 PS")         
+       field (SCAN, "1 second")  
+       field(FLNK,"S3:cal")                                                                  
+}
+record(ai,"S4")
+{
+       field (DTYP, "stream")
+       field (INP, "@gammaion.proto s1 PS")         
+       field (SCAN, "1 second")  
+       field(FLNK,"S4:cal")                                                                  
+}
+record(bo,"TON1")
+{
+       field (DTYP, "stream")
+       field (OUT, "@gammaion.proto ton1 PS")         
+       field(ZNAM,"OFF")
+       field(ONAM,"ON")                                                                 
+} 
+
+record(bo,"TON2")
+{
+       field (DTYP, "stream")
+       field (OUT, "@gammaion.proto ton2 PS")          
+       field(ZNAM,"OFF")
+       field(ONAM,"ON")                                                                  
+}
+record(bo,"TON3")
+{
+       field (DTYP, "stream")
+       field (OUT, "@gammaion.proto ton3 PS")         
+       field(ZNAM,"OFF")
+       field(ONAM,"ON")                                                                 
+} 
+
+record(bo,"TON4")
+{
+       field (DTYP, "stream")
+       field (OUT, "@gammaion.proto ton4 PS")          
+       field(ZNAM,"OFF")
+       field(ONAM,"ON")                                                                  
+}
+
+record(bo,"TOFF1")
+{
+       field (DTYP, "stream")
+       field (OUT, "@gammaion.proto toff1 PS")         
+       field(ZNAM,"OFF")
+       field(ONAM,"ON")                                                                  
+} 
+
+record(bo,"TOFF2")
+{
+       field (DTYP, "stream")
+       field (OUT, "@gammaion.proto toff2 PS")          
+       field(ZNAM,"OFF")
+       field(ONAM,"ON")                                                                  
+}
+record(bo,"TOFF3")
+{
+       field (DTYP, "stream")
+       field (OUT, "@gammaion.proto toff3 PS")         
+       field(ZNAM,"OFF")
+       field(ONAM,"ON")                                                                  
+} 
+
+record(bo,"TOFF4")
+{
+       field (DTYP, "stream")
+       field (OUT, "@gammaion.proto toff4 PS")          
+       field(ZNAM,"OFF")
+       field(ONAM,"ON")                                                                  
+}
+record(bo,"RESTART")
+{
+       field (DTYP, "stream")
+       field (OUT, "@gammaion.proto restart PS")         
+       field(ZNAM,"OFF")
+       field(ONAM,"ON")                                                                  
+}
+record(calcout,"S1:cal")
+{
+       field (INPA, "S1")       
+       field (CALC, "(A<1)?0:1")
+	   field(OUT,"S1:alarm")   
+}
+record(bi,"S1:alarm")
+{
+		field(DTYP,"Soft Channel")
+		field(VAL, "0") 
+		field (SCAN, "1 second") 
+		field(ZNAM,"OFF")
+		field(ONAM,"ON")
+		
+}
+record(calcout,"S2:cal")
+{
+       field (INPA, "S2")       
+       field (CALC, "(A<1)?0:1")
+	   field(OUT,"S2:alarm")   
+}
+record(bi,"S2:alarm")
+{
+		field(DTYP,"Soft Channel")
+		field(VAL, "0") 
+		field (SCAN, "1 second") 
+		field(ZNAM,"OFF")
+		field(ONAM,"ON")
+		
+}
+record(calcout,"S3:cal")
+{
+       field (INPA, "S3")       
+       field (CALC, "(A<1)?0:1")
+	   field(OUT,"S3:alarm")   
+}
+record(bi,"S3:alarm")
+{
+		field(DTYP,"Soft Channel")
+		field(VAL, "0") 
+		field (SCAN, "1 second") 
+		field(ZNAM,"OFF")
+		field(ONAM,"ON")
+		
+}
+record(calcout,"S4:cal")
+{
+       field (INPA, "S4")       
+       field (CALC, "(A<1)?0:1")
+	   field(OUT,"S4:alarm")   
+}
+record(bi,"S4:alarm")
+{
+		field(DTYP,"Soft Channel")
+		field(VAL, "0") 
+		field (SCAN, "1 second") 
+		field(ZNAM,"OFF")
+		field(ONAM,"ON")
+		
+}
